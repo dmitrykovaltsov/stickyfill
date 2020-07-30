@@ -153,7 +153,8 @@ class Sticky {
             styles: {
                 position: parentNode.style.position
             },
-            offsetHeight: parentNode.offsetHeight
+            offsetHeight: parentNode.offsetHeight,
+            offsetWidth: parentNode.offsetWidth
         };
         this._offsetToWindow = {
             left: nodeWinOffset.left,
@@ -243,7 +244,7 @@ class Sticky {
                     right: this._offsetToParent.right + 'px',
                     top: this._offsetToParent.top + 'px',
                     bottom: 'auto',
-                    width: 'auto',
+                    width: this._parent.offsetWidth + 'px',
                     marginLeft: 0,
                     marginRight: 0,
                     marginTop: 0
@@ -257,7 +258,7 @@ class Sticky {
                     right: this._offsetToWindow.right + 'px',
                     top: this._styles.top,
                     bottom: 'auto',
-                    width: 'auto',
+                    width: this._parent.offsetWidth + 'px',
                     marginLeft: 0,
                     marginRight: 0,
                     marginTop: 0
@@ -271,7 +272,7 @@ class Sticky {
                     right: this._offsetToParent.right + 'px',
                     top: 'auto',
                     bottom: 0,
-                    width: 'auto',
+                    width: this._parent.offsetWidth + 'px',
                     marginLeft: 0,
                     marginRight: 0
                 });
